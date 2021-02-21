@@ -5,6 +5,8 @@ import { setModalIsOpen } from './redux/modal/actions'
 import { RootState } from './store'
 import ReactModal from './components/modal'
 import PrimaryButton from './ui/atoms/Button'
+import labels from './const/labels'
+import Dashboard from './components/modal/dashboard'
 
 const App = () => {
     const dispatch = useDispatch()
@@ -23,16 +25,19 @@ const App = () => {
                 title="Sorting Visualizer"
                 navList={[
                     <PrimaryButton
-                        label="Algorithms"
-                        handleOnClick={handleClick}
-                    />,
-                    <PrimaryButton label="Kevin" handleOnClick={handleClick} />,
-                    <PrimaryButton
-                        label="Joe Rogan"
+                        label={labels.algorithm}
                         handleOnClick={handleClick}
                     />,
                     <PrimaryButton
-                        label="Bobby Lee"
+                        label={labels.kevin}
+                        handleOnClick={handleClick}
+                    />,
+                    <PrimaryButton
+                        label={labels.joeRogan}
+                        handleOnClick={handleClick}
+                    />,
+                    <PrimaryButton
+                        label={labels.bobbyLee}
                         handleOnClick={handleClick}
                     />,
                     <PrimaryButton
@@ -41,7 +46,7 @@ const App = () => {
                     />
                 ]}
             />
-
+            <Dashboard />
             {isModalOpen && <ReactModal isOpen={isModalOpen} />}
         </div>
     )
