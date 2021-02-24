@@ -26,6 +26,4 @@ const ReactModal = (props: ReactModalProps) => {
     )
 }
 
-Modal.setAppElement('#modal-root')
-
 export default ReactModal
